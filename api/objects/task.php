@@ -1,12 +1,13 @@
 <?php
-class Units{
+class Task{
  
     // database connection and table name
     private $conn;
-    private $table_name = "unit";
+    private $table_name = "task";
  
     // object properties
     public $id;
+    public $unit_id;
     public $name;
     public $description;
  
@@ -14,14 +15,16 @@ class Units{
     public function __construct($db){
         $this->conn = $db;
     }
-    // read products
-    function read(){
+    // read tasks for unit, idk how to name this function better readTasksByUnit seems too long?
+    function readTasksByUnit(){
     
         // select all query
         $query = "SELECT
                     id, name, description
                 FROM
-                    " . $this->table_name . "
+                    $this->table_name
+                WHERE
+                    unit_id=$this->unit_id
                 ORDER BY
                     id ASC";
     

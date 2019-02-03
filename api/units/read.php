@@ -5,17 +5,17 @@ header("Content-Type: application/json; charset=UTF-8");
  
 // include database and object files
 include_once '../config/database.php';
-include_once '../objects/units.php';
+include_once '../objects/unit.php';
  
 // instantiate database and unit object
 $database = new Database();
 $db = $database->getConnection();
  
 // initialize object
-$units = new Units($db);
+$unit = new Unit($db);
  
 // query units
-$stmt = $units->read();
+$stmt = $unit->read();
 $num = $stmt->rowCount();
  
 // check if more than 0 record found
