@@ -36,7 +36,7 @@ if($num>0){
         $unit_item=array(
             "id" => $id,
             "name" => $name,
-            "description" => html_entity_decode($description),
+            "description" => $description,
         );
  
         array_push($units_arr, $unit_item);
