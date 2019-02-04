@@ -2,10 +2,10 @@
 class Database{
  
     // specify your own database credentials
-    private $host = "localhost";
-    private $db_name = "api_db";
-    private $username = "root";
-    private $password = "";
+    private $host = "sql7.freemysqlhosting.net";
+    private $db_name = "sql7277236";
+    private $username = "sql7277236";
+    private $password = "Wy8qmysj6l";
     public $conn;
  
     // get the database connection
