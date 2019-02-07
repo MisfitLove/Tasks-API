@@ -1,22 +1,28 @@
 
 <?php
 
-// $request = $_SERVER['REDIRECT_URL'];
+//altoRouter
+require './router/AltoRouter.php';
+$router = new AltoRouter();
 
-// switch ($request) {
-//     case '/' :
-//         require __DIR__ . '/views/index.php';
-//         break;
-//     case '' :
-//         require __DIR__ . '/views/index.php';
-//         break;
-//     case '/about' :
-//         require __DIR__ . '/views/about.php';
-//         break;
-//     default: 
-//         require __DIR__ . '/views/404.php';
-//         break;
-// }
+//mapping routes, http://altorouter.com/usage/mapping-routes.html
+$router->map( 'GET', '/api/units/', function() {
+    require __DIR__ . '/api/units/read.php';
+});
+
+$router->map( 'GET', '/api/units/[i:id]/tasks/', function($id) {
+    require __DIR__ . '/api/tasks/read_unit.php?unit_id=$id';
+});
+
+/* Match the current request */
+$match = $router->match();
+if( $match && is_callable( $match['target'] ) ) {
+	call_user_func_array( $match['target'], $match['params'] ); 
+} else {
+	// no route was matched
+	header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+}
+
 
 
 echo "Nothing to see here";
