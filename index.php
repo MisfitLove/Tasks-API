@@ -18,7 +18,34 @@
 //         break;
 // }
 
+$url = $_SERVER['HTTP_HOST'];
 
-echo "Nothing to see here";
+echo "$url/api/units/read.php - array unitów
+[
+	{
+		"id" : string id
+		"name" string
+		"description": string
+	}
+]
+
+https://$url/api/tasks/read_unit.php?unit_id={id} - array tasków dla unita
+[
+	{
+		"id" : id
+		"name": string
+		"description": string
+	}
+]
+
+https://$url/api/pictures/read_task.php?task_id={id} - array obrazków dla taska
+
+[
+	{
+		"id": id
+		"word": string
+		"url": string 
+	}
+]";
 
 ?>
