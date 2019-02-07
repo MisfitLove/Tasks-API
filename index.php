@@ -32,7 +32,7 @@ $url/api/units/read.php - array unitów<br>
 ]<br>
 </p>
 <p>
-https://$url/api/tasks/read_unit.php?unit_id={id} - array tasków dla unita<br>
+$url/api/tasks/read_unit.php?unit_id={id} - array tasków dla unita<br>
 [<br>
 	{<br>
 		\"id\" : id<br>
@@ -42,7 +42,7 @@ https://$url/api/tasks/read_unit.php?unit_id={id} - array tasków dla unita<br>
 ]<br>
 </p>
 <p>
-https://$url/api/pictures/read_task.php?task_id={id} - array obrazków dla taska<br>
+$url/api/pictures/read_task.php?task_id={id} - array obrazków dla taska<br>
 [<br>
 	{<br>
 		\"id\": id<br>
